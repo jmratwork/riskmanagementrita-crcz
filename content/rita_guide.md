@@ -6,13 +6,11 @@ This guide summarises the main steps for working with RITA (Risk Identification 
 1. Navigate to `https://ng-soc.eurodyn.com/login`.
 2. Enter the username and password provided in the exercise.
 3. Click **Log In** to access the dashboard.
-   *Nota: en español, los campos se muestran como **Usuario** y **Contraseña**.*
 
 ## Asset Creation
 1. From the dashboard, choose **Assets → Add Asset**.
 2. Provide name, description, and owner.
 3. Save the asset; repeat for each system component.
-   *Nota: utilice “Guardar” para confirmar el registro.*
 
 ## Threat and Vulnerability Mapping
 1. Open an asset and use **Threats → Add Threat** to assign relevant threats.
