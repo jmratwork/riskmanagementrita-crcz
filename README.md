@@ -1,7 +1,7 @@
 # riskmanagementrita-crcz
 
 This repository contains all resources required to deploy and run **Learning Module 2 – Risk Management** 
-on the [KYPO Cyber Range Platform](https://docs.crp.kypo.muni.cz/).
+on the [CyberRangeCZ Platform](https://docs.platform.cyberrange.cz/).
 
 ## Structure
 
@@ -51,7 +51,7 @@ Based on:
 
 ## Usage
 
-1. Deploy using the KYPO CRP interface.
+1. Deploy using the CyberRangeCZ Platform interface.
 2. Load the provided topologies and provisioning playbooks.
 3. Follow the instructions in the markdown files within `content/`.
 
@@ -69,14 +69,14 @@ Refer to the [RITA guide](content/rita_guide.md) for step-by-step instructions o
 
 ## Deployment
 
-To run this training on the KYPO Cyber Range Platform:
+To run this training on the CyberRangeCZ Platform:
 
 1. **Install prerequisites** – Ansible 2.12+ is recommended. The provisioning playbooks use the `sysctl` module from the `ansible.posix` collection. Install it before running the playbooks:
 
    ```bash
    ansible-galaxy collection install ansible.posix
    ```
-2. **Import the training** – Log in to KYPO CRP and navigate to *Training Management → Import*. Upload all files from this repository, including `training.yaml`.
+2. **Import the training** – Log in to CyberRangeCZ Platform and navigate to *Training Management → Import*. Upload all files from this repository, including `training.yaml`.
 3. **Select a sandbox variant** – When launching a scenario, choose either:
    - `sandboxes/topology_puc1.yaml` (banking use case), or
    - `sandboxes/topology_puc3.yaml` (ICS use case).
@@ -95,7 +95,7 @@ The default password is usually `debian` unless the instructor states otherwise.
 
 Recommended workflow:
 
-1. Open a terminal in the KYPO interface and first connect to the main analyst machine (`bank-analyst` or `corp-workstation`).
+1. Open a terminal in the CRCZ interface and first connect to the main analyst machine (`bank-analyst` or `corp-workstation`).
 2. From there, access the remaining scenario machines with `ssh`.
 3. Refer to the exercise guide in the `content/` folder (`exercise1.md` or `exercise2.md`).
 4. Save notes and evidence in your home directory (`/home/debian`) or in the location specified by the course.
