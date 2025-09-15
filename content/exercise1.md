@@ -22,10 +22,11 @@ You are the Cybersecurity Risk Manager for a major retail bank offering online s
 
 ## Steps
 1. Map critical assets and data flows between the provided machines.
-2. Build threat scenarios using STRIDE and MITRE ATT&CK techniques.
-3. Assess the likelihood and impact of each scenario.
-4. Propose mitigations and prioritise them in a risk treatment plan.
-5. Prepare documentation for technical and executive audiences.
+2. Log into RITA and model bank assets, threats, and countermeasures following the RITA guide.
+3. Build threat scenarios using STRIDE and MITRE ATT&CK techniques.
+4. Assess the likelihood and impact of each scenario.
+5. Propose mitigations and prioritise them in a risk treatment plan.
+6. Prepare documentation for technical and executive audiences.
 
 ## Deliverables
 The exercise report should include:
@@ -38,6 +39,7 @@ The exercise report should include:
   | Medium              |          |     |        |      |          |
   | High                |          |     |        |      |          |
   | Critical            |          |     |        |      |          |
+- **RITA risk evaluation results** – Export or screenshot the risk assessment output from RITA.
 - **Risk treatment plan** – Recommended mitigations ordered by priority.
 - **Executive summary** – One page of key findings for leadership.
 
