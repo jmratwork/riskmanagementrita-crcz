@@ -65,9 +65,7 @@ the exercises. Access it from any machine in the training environment using:
 - **Username:**
 - **Password:**
 
-Refer to the [RITA guide](content/rita_guide.md) for detailed instructions. The
-exercises require using RITA to build asset inventories, model threats and
-document overall risk evaluations.
+Refer to the [RITA guide](content/rita_guide.md) for step-by-step instructions on logging in, creating assets, mapping threats and vulnerabilities, evaluating risk, and importing data. The exercises require using RITA to build asset inventories, model threats and document overall risk evaluations.
 
 ## Deployment
 

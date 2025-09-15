@@ -22,7 +22,7 @@ You are acting as the Cybersecurity Risk Manager for a national power transmissi
 
 ## Steps
 1. Identify ICS and IT assets critical to operations.
-2. Use RITA to model ICS assets, potential threats and vulnerabilities.
+2. Use RITA to model ICS assets, potential threats and vulnerabilities as described in the [RITA guide](rita_guide.md).
 3. Model threat scenarios such as malware propagation from IT to OT, insider manipulation of SCADA and unauthorised RTU commands.
 4. Assess safety, operational and strategic impact.
 5. Recommend controls suited for industrial environments.

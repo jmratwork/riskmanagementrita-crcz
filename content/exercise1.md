@@ -22,7 +22,7 @@ You are the Cybersecurity Risk Manager for a major retail bank offering online s
 
 ## Steps
 1. Map critical assets and data flows between the provided machines.
-2. Log into RITA and model bank assets, threats, and countermeasures following the RITA guide.
+2. Log into RITA and model bank assets, threats, and countermeasures following the [RITA guide](rita_guide.md).
 3. Build threat scenarios using STRIDE and MITRE ATT&CK techniques.
 4. Assess the likelihood and impact of each scenario.
 5. Propose mitigations and prioritise them in a risk treatment plan.
