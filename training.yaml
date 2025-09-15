@@ -3,6 +3,8 @@ title: "Learning Module 2: Risk Management (NG-SOC LM2)"
 description: |
   Training scenario comprising two hands-on exercises focused on proactive
   cybersecurity risk management in critical sectors (financial and energy).
+  Learners use the RITA platform for dynamic risk analysis throughout the
+  exercises.
   Participants take on the role of a Cybersecurity Risk Manager for (1) a
   banking institution and (2) an energy infrastructure, conducting asset
   identification and threat modelling, risk assessment (likelihood and impact),
@@ -33,6 +35,8 @@ outcomes:
   - >
     Adapt risk management approaches to industrial (OT/ICS) environments,
     accounting for availability and physical safety considerations.
+  - >
+    Develop proficiency in RITA-based modelling and risk evaluation.
 state: "RELEASED"
 show_stepper_bar: true
 levels:
