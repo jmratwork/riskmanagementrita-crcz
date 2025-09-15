@@ -1,0 +1,4 @@
+# Variables for user accounts.
+# Supply a hashed password for 'debian_user_password_hash' using a secure
+# mechanism such as environment variables or Ansible Vault.
+debian_user_password_hash: "{{ lookup('env', 'DEBIAN_PASSWORD_HASH') }}"

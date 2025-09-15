@@ -66,6 +66,8 @@
 - name: Remove UFW from all hosts
   hosts: all
   become: true
+  vars_files:
+    - vars/users.yml
   tasks:
     - name: Remove UFW firewall
       ansible.builtin.apt:
@@ -74,11 +76,12 @@
     - name: Create User
       ansible.builtin.user:
         name: debian
-        password: "{{ 'qwerty!23' | password_hash('sha512') }}"
+        password: "{{ debian_user_password_hash }}"
+        update_password: on_create
         state: present
     - name: Give sudo privileges
       ansible.builtin.copy:
         dest: /etc/sudoers.d/debian
-        content: "debian ALL=(ALL) NOPASSWD:ALL"
+        content: "debian ALL=(ALL) /usr/bin/apt-get, /usr/bin/systemctl"
         mode: '0440'
         validate: 'visudo -cf %s'
