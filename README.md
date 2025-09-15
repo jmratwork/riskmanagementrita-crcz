@@ -7,7 +7,7 @@ on the [CyberRangeCZ Platform](https://docs.platform.cyberrange.cz/).
 
 ```
 .
-├── training.yaml                # KYPO training definition
+├── training.yaml                # CRCZ training definition
 ├── content/                     # Exercise descriptions
 │   ├── exercise1.md
 │   └── exercise2.md
