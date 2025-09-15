@@ -22,10 +22,11 @@ You are acting as the Cybersecurity Risk Manager for a national power transmissi
 
 ## Steps
 1. Identify ICS and IT assets critical to operations.
-2. Model threat scenarios such as malware propagation from IT to OT, insider manipulation of SCADA and unauthorised RTU commands.
-3. Assess safety, operational and strategic impact.
-4. Recommend controls suited for industrial environments.
-5. Summarise findings in a risk report for leadership and engineers.
+2. Use RITA to model ICS assets, potential threats and vulnerabilities.
+3. Model threat scenarios such as malware propagation from IT to OT, insider manipulation of SCADA and unauthorised RTU commands.
+4. Assess safety, operational and strategic impact.
+5. Recommend controls suited for industrial environments.
+6. Summarise findings in a risk report for leadership and engineers.
 
 ## Deliverables
 Your submission should include:
@@ -38,6 +39,7 @@ Your submission should include:
   | Medium              |          |     |        |      |          |
   | High                |          |     |        |      |          |
   | Critical            |          |     |        |      |          |
+- **RITA-generated risk report** – Export outlining energy infrastructure assets, threats and vulnerabilities.
 - **Mitigation plan** – Prioritised recommendations for protecting the OT network.
 - **Cyber risk report** – Summary for technical leads and executives.
 
