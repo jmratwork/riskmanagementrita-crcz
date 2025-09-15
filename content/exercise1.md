@@ -7,7 +7,7 @@ You are the Cybersecurity Risk Manager for a major retail bank offering online s
 ![Banking topology](../static/diagram_banking.png)
 
 ### Connection Guide
-1. Open a terminal in the KYPO Cyber Range interface.
+1. Open a terminal in the CyberRangeCZ interface.
 2. Connect to the analysis workstation:
    ```bash
    ssh <user>@bank-analyst
