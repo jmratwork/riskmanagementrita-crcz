@@ -55,6 +55,20 @@ Based on:
 2. Load the provided topologies and provisioning playbooks.
 3. Follow the instructions in the markdown files within `content/`.
 
+## Using RITA
+
+RITA (Risk Identification and Threat Assessment) provides a web interface for
+cataloguing assets, mapping threats and recording risk calculations throughout
+the exercises. Access it from any machine in the training environment using:
+
+- **URL:** `https://rita.<your-sandbox-domain>`
+- **Username:** `rita`
+- **Password:** `rita`
+
+Refer to the [RITA guide](content/rita_guide.md) for detailed instructions. The
+exercises require using RITA to build asset inventories, model threats and
+document overall risk evaluations.
+
 ## Deployment
 
 To run this training on the KYPO Cyber Range Platform:
