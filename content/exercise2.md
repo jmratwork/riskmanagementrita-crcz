@@ -7,7 +7,7 @@ You are acting as the Cybersecurity Risk Manager for a national power transmissi
 ![Energy topology](../static/diagram_energy.png)
 
 ### Connection Guide
-1. Open a terminal via the KYPO interface.
+1. Open a terminal via the CyberRangeCZ interface.
 2. Connect to the corporate workstation:
    ```bash
    ssh <user>@corp-workstation
