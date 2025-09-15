@@ -22,12 +22,24 @@
         update_cache: true
         name: netcat
         state: present
-    - name: Open Modbus port (502)
-      ansible.builtin.shell: nohup nc -lkp 502 >/dev/null 2>&1 &
-      changed_when: false
-    - name: Open S7comm port (102)
-      ansible.builtin.shell: nohup nc -lkp 102 >/dev/null 2>&1 &
-      changed_when: false
+    - name: Deploy netcat listener service
+      ansible.builtin.template:
+        src: templates/nc-listener@.service.j2
+        dest: /etc/systemd/system/nc-listener@.service
+        mode: '0644'
+    - name: Reload systemd to pick up nc listener unit
+      ansible.builtin.systemd:
+        daemon_reload: true
+    - name: Ensure Modbus service listening on port 502
+      ansible.builtin.service:
+        name: nc-listener@502
+        state: started
+        enabled: true
+    - name: Ensure S7comm service listening on port 102
+      ansible.builtin.service:
+        name: nc-listener@102
+        state: started
+        enabled: true
 
 - name: Install and configure RITA
   hosts: rita-server
