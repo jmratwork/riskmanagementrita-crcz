@@ -43,6 +43,21 @@
         regexp: '^bind-address'
         line: 'bind-address = 0.0.0.0'
 
+- name: Install and configure RITA
+  hosts: rita-server
+  become: true
+  tasks:
+    - name: Install RITA
+      ansible.builtin.apt:
+        update_cache: true
+        name: rita
+        state: present
+    - name: Ensure RITA service is running
+      ansible.builtin.service:
+        name: rita
+        state: started
+        enabled: true
+
 - name: Remove UFW from all hosts
   hosts: all
   become: true

@@ -1,4 +1,5 @@
 name: ngsoc-lm2
+# RITA reachable at rita-server (10.0.1.40)
 hosts:
   - name: bank-analyst
     base_box:
@@ -30,6 +31,11 @@ hosts:
       image: debian-12-x86_64
       mgmt_user: debian
     flavor: standard.medium
+  - name: rita-server
+    base_box:
+      image: debian-12-x86_64
+      mgmt_user: debian
+    flavor: standard.small
 routers:
   - name: router
     base_box:
@@ -63,6 +69,9 @@ net_mappings:
   - host: substation-rtu
     network: ics-net
     ip: 10.0.2.30
+  - host: rita-server
+    network: bank-net
+    ip: 10.0.1.40
 router_mappings:
   - router: router
     network: bank-net
