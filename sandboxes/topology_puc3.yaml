@@ -1,0 +1,44 @@
+name: ngsoc-lm2-puc3
+hosts:
+  - name: corp-workstation
+    base_box:
+      image: kali
+      mgmt_user: debian
+    flavor: csirtmu.tiny1x2
+  - name: scada-server
+    base_box:
+      image: debian-11
+      mgmt_user: debian
+    flavor: csirtmu.tiny1x2
+  - name: substation-rtu
+    base_box:
+      image: debian-11
+      mgmt_user: debian
+    flavor: csirtmu.tiny1x2
+routers:
+  - name: router
+    base_box:
+      image: debian-11
+      mgmt_user: debian
+    flavor: csirtmu.tiny1x2
+wan:
+  name: internet
+  cidr: 100.100.100.0/24
+networks:
+  - name: ics-net
+    cidr: 10.0.2.0/24
+net_mappings:
+  - host: corp-workstation
+    network: ics-net
+    ip: 10.0.2.10
+  - host: scada-server
+    network: ics-net
+    ip: 10.0.2.20
+  - host: substation-rtu
+    network: ics-net
+    ip: 10.0.2.30
+router_mappings:
+  - router: router
+    network: ics-net
+    ip: 10.0.2.1
+groups: []

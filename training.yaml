@@ -1,0 +1,58 @@
+---
+title: "Learning Module 2: Risk Management (NG-SOC LM2)"
+description: |
+  Training scenario comprising two hands-on exercises focused on proactive
+  cybersecurity risk management in critical sectors (financial and energy).
+  Participants take on the role of a Cybersecurity Risk Manager for (1) a
+  banking institution and (2) an energy infrastructure, conducting asset
+  identification and threat modelling, risk assessment (likelihood and impact),
+  and designing mitigations. Exercises are aligned with frameworks such as
+  MITRE ATT&CK, STRIDE, and the ENISA European Cybersecurity Skills Framework
+  (ECSF), and are tailored for intermediate to advanced learners in roles such
+  as Risk Manager and Security Architect. The training includes supporting
+  artefacts (e.g., network diagrams, risk matrices) and guided steps.
+prerequisites:
+  - >
+    Basic cybersecurity knowledge (threats, vulnerabilities, security controls).
+  - >
+    Familiarity with risk assessment methodologies (e.g. ISO 27005, NIST 800-30)
+    and attack frameworks.
+outcomes:
+  - >
+    Apply threat modelling methodologies (e.g. STRIDE, MITRE ATT&CK) to identify
+    vulnerabilities and attack scenarios in banking and ICS/SCADA systems.
+  - >
+    Qualitatively assess risks (likelihood and impact) and prioritise them based
+    on business and safety consequences.
+  - >
+    Recommend security controls and mitigation strategies (technical and
+    procedural) aligned with defence-in-depth principles.
+  - >
+    Translate technical risk analysis into clear action plans for both
+    technical teams and executives.
+  - >
+    Adapt risk management approaches to industrial (OT/ICS) environments,
+    accounting for availability and physical safety considerations.
+state: "RELEASED"
+show_stepper_bar: true
+levels:
+  - title: "Exercise 1: Risk Assessment and Threat Modelling (Banking Sector)"
+    level_type: "TRAINING_LEVEL"
+    order: 1
+    estimated_duration: 90
+    content: |
+      *(Detailed exercise content is provided in **content/exercise1.md**)*
+    answer: "COMPLETED"
+    answer_variable_name: null
+  - title: |
+      Exercise 2: Risk Assessment and Threat Modelling
+      (ICS Energy Infrastructure)
+    level_type: "TRAINING_LEVEL"
+    order: 2
+    estimated_duration: 90
+    content: |
+      *(Detailed exercise content is provided in **content/exercise2.md**)*
+    answer: "COMPLETED"
+    answer_variable_name: null
+estimated_duration: 180
+variant_sandboxes: true

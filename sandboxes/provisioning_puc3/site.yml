@@ -1,0 +1,39 @@
+---
+- name: Configure router
+  hosts: router
+  become: true
+  tasks:
+    - name: Enable IP forwarding
+      ansible.posix.sysctl:
+        name: net.ipv4.ip_forward
+        value: '1'
+        state: present
+    - name: Set up NAT for ics-net
+      ansible.builtin.command: >
+        iptables -t nat -A POSTROUTING -s 10.0.2.0/24 -o eth2 -j MASQUERADE
+      changed_when: false
+
+- name: Configure substation RTU
+  hosts: substation-rtu
+  become: true
+  tasks:
+    - name: Install netcat for ICS port simulation
+      ansible.builtin.apt:
+        update_cache: true
+        name: netcat
+        state: present
+    - name: Open Modbus port (502)
+      ansible.builtin.shell: nohup nc -lkp 502 >/dev/null 2>&1 &
+      changed_when: false
+    - name: Open S7comm port (102)
+      ansible.builtin.shell: nohup nc -lkp 102 >/dev/null 2>&1 &
+      changed_when: false
+
+- name: Remove UFW from all hosts
+  hosts: all
+  become: true
+  tasks:
+    - name: Remove UFW firewall
+      ansible.builtin.apt:
+        name: ufw
+        state: absent

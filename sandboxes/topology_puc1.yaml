@@ -1,0 +1,44 @@
+name: ngsoc-lm2-puc1
+hosts:
+  - name: bank-analyst
+    base_box:
+      image: kali
+      mgmt_user: debian
+    flavor: csirtmu.tiny1x2
+  - name: bank-web
+    base_box:
+      image: debian-11
+      mgmt_user: debian
+    flavor: csirtmu.tiny1x2
+  - name: bank-db
+    base_box:
+      image: debian-11
+      mgmt_user: debian
+    flavor: csirtmu.tiny1x2
+routers:
+  - name: router
+    base_box:
+      image: debian-11
+      mgmt_user: debian
+    flavor: csirtmu.tiny1x2
+wan:
+  name: internet
+  cidr: 100.100.100.0/24
+networks:
+  - name: bank-net
+    cidr: 10.0.1.0/24
+net_mappings:
+  - host: bank-analyst
+    network: bank-net
+    ip: 10.0.1.10
+  - host: bank-web
+    network: bank-net
+    ip: 10.0.1.20
+  - host: bank-db
+    network: bank-net
+    ip: 10.0.1.30
+router_mappings:
+  - router: router
+    network: bank-net
+    ip: 10.0.1.1
+groups: []

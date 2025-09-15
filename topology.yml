@@ -1,0 +1,73 @@
+name: ngsoc-lm2
+hosts:
+  - name: bank-analyst
+    base_box:
+      image: kali
+      mgmt_user: debian
+    flavor: standard.medium
+  - name: bank-web
+    base_box:
+      image: debian-12-x86_64
+      mgmt_user: debian
+    flavor: standard.medium
+  - name: bank-db
+    base_box:
+      image: debian-12-x86_64
+      mgmt_user: debian
+    flavor: standard.medium
+  - name: corp-workstation
+    base_box:
+      image: kali
+      mgmt_user: debian
+    flavor: standard.medium
+  - name: scada-server
+    base_box:
+      image: debian-12-x86_64
+      mgmt_user: debian
+    flavor: standard.medium
+  - name: substation-rtu
+    base_box:
+      image: debian-12-x86_64
+      mgmt_user: debian
+    flavor: standard.medium
+routers:
+  - name: router
+    base_box:
+      image: debian-12-x86_64
+      mgmt_user: debian
+    flavor: standard.small
+wan:
+  name: internet
+  cidr: 100.100.100.0/24
+networks:
+  - name: bank-net
+    cidr: 10.0.1.0/24
+  - name: ics-net
+    cidr: 10.0.2.0/24
+net_mappings:
+  - host: bank-analyst
+    network: bank-net
+    ip: 10.0.1.10
+  - host: bank-web
+    network: bank-net
+    ip: 10.0.1.20
+  - host: bank-db
+    network: bank-net
+    ip: 10.0.1.30
+  - host: corp-workstation
+    network: ics-net
+    ip: 10.0.2.10
+  - host: scada-server
+    network: ics-net
+    ip: 10.0.2.20
+  - host: substation-rtu
+    network: ics-net
+    ip: 10.0.2.30
+router_mappings:
+  - router: router
+    network: bank-net
+    ip: 10.0.1.1
+  - router: router
+    network: ics-net
+    ip: 10.0.2.1
+groups: []

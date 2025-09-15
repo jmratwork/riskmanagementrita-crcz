@@ -1,0 +1,53 @@
+---
+- name: Configure router
+  hosts: router
+  become: true
+  tasks:
+    - name: Enable IP forwarding
+      ansible.posix.sysctl:
+        name: net.ipv4.ip_forward
+        value: '1'
+        state: present
+    - name: Set up NAT for bank-net
+      ansible.builtin.command: >
+        iptables -t nat -A POSTROUTING -s 10.0.1.0/24 -o eth2 -j MASQUERADE
+      changed_when: false
+
+- name: Configure bank web server
+  hosts: bank-web
+  become: true
+  tasks:
+    - name: Install Apache2
+      ansible.builtin.apt:
+        update_cache: true
+        name: apache2
+        state: present
+    - name: Deploy banking portal page
+      ansible.builtin.copy:
+        dest: /var/www/html/index.html
+        content: "<h1>Welcome to Online Banking</h1><p>Secure login portal.</p>"
+        mode: '0644'
+
+- name: Configure bank database
+  hosts: bank-db
+  become: true
+  tasks:
+    - name: Install MariaDB
+      ansible.builtin.apt:
+        update_cache: true
+        name: mariadb-server
+        state: present
+    - name: Allow remote DB access
+      ansible.builtin.lineinfile:
+        path: /etc/mysql/mariadb.conf.d/50-server.cnf
+        regexp: '^bind-address'
+        line: 'bind-address = 0.0.0.0'
+
+- name: Remove UFW from all hosts
+  hosts: all
+  become: true
+  tasks:
+    - name: Remove UFW firewall
+      ansible.builtin.apt:
+        name: ufw
+        state: absent
