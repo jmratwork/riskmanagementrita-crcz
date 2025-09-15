@@ -1,0 +1,10 @@
+[Unit]
+Description=Netcat listener on port %i
+After=network.target
+
+[Service]
+ExecStart=/bin/nc -lkp %i
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
