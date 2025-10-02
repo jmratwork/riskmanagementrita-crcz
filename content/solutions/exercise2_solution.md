@@ -1,20 +1,20 @@
-# Solución del Ejercicio 2: Infraestructura Energética ICS
+# Solution for Exercise 2: ICS Energy Infrastructure
 
-## Hallazgos esperados
-- Inventario de componentes OT críticos (SCADA, PLC, RTU, redes de campo) y sus interdependencias con sistemas IT.
-- Diagrama actualizado de zonas y conductos conforme a ISA/IEC 62443 con puntos de acceso remotos identificados.
-- Registro de amenazas y tácticas pertinentes (MITRE ATT&CK for ICS), incluyendo compromiso de ingeniería remota y manipulación de procesos.
-- Evaluación de controles actuales como firewalls industriales, whitelisting de aplicaciones y políticas de cambio en OT.
+## Expected findings
+- Inventory of critical OT components (SCADA, PLC, RTU, field networks) and their interdependencies with IT systems.
+- Updated zones and conduits diagram in line with ISA/IEC 62443 with identified remote access points.
+- Register of pertinent threats and tactics (MITRE ATT&CK for ICS), including remote engineering compromise and process manipulation.
+- Assessment of current controls such as industrial firewalls, application whitelisting, and OT change policies.
 
-## Riesgos identificados
-- Intrusión en la red corporativa que pivote hacia la DMZ industrial y afecte la operación del SCADA.
-- Manipulación maliciosa de parámetros en PLC provocando interrupciones en la generación o distribución eléctrica.
-- Denegación de servicio sobre enlaces de comunicación con centros de control redundantes insuficientes.
-- Uso de credenciales compartidas para acceso de mantenimiento remoto sin supervisión ni registro.
+## Identified risks
+- Intrusion into the corporate network that pivots towards the industrial DMZ and affects SCADA operations.
+- Malicious manipulation of PLC parameters causing interruptions to power generation or distribution.
+- Denial-of-service attacks against communication links with insufficient redundancy across control centres.
+- Use of shared credentials for remote maintenance access without supervision or logging.
 
-## Mitigaciones recomendadas
-- Implementar monitoreo continuo de redes OT con detección de anomalías y visibilidad de protocolos industriales.
-- Aplicar control de acceso basado en roles y autenticación multifactor para accesos remotos a ingeniería.
-- Segmentar la red con firewalls de próxima generación entre IT/OT y zonas críticas, usando listas de control mínimamente necesarias.
-- Establecer procedimientos de gestión de parches y cambios validados en entornos de pruebas antes de producción.
-- Diseñar y probar planes de respuesta ante incidentes OT, con ejercicios coordinados con operaciones y proveedores.
+## Recommended mitigations
+- Implement continuous monitoring of OT networks with anomaly detection and visibility of industrial protocols.
+- Apply role-based access control and multi-factor authentication for remote engineering access.
+- Segment the network with next-generation firewalls between IT/OT and critical zones, using minimally necessary control lists.
+- Establish patch and change management procedures validated in test environments before production.
+- Design and test OT incident response plans, with exercises coordinated with operations teams and suppliers.
