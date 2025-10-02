@@ -46,7 +46,9 @@ levels:
     estimated_duration: 90
     content: |
       *(Detailed exercise content is provided in **content/exercise1.md**)*
-    answer: "COMPLETED"
+    answer: |
+      Consulta **content/solutions/exercise1_solution.md** para un resumen de los hallazgos,
+      riesgos priorizados y mitigaciones recomendadas del ejercicio.
     answer_variable_name: null
   - title: |
       Exercise 2: Risk Assessment and Threat Modelling
@@ -56,7 +58,9 @@ levels:
     estimated_duration: 90
     content: |
       *(Detailed exercise content is provided in **content/exercise2.md**)*
-    answer: "COMPLETED"
+    answer: |
+      Consulta **content/solutions/exercise2_solution.md** para el detalle de hallazgos,
+      riesgos identificados y mitigaciones propuestas para la infraestructura ICS.
     answer_variable_name: null
 estimated_duration: 180
 variant_sandboxes: true
