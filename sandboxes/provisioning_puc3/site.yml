@@ -8,10 +8,24 @@
         name: net.ipv4.ip_forward
         value: '1'
         state: present
-    - name: Set up NAT for ics-net
-      ansible.builtin.command: >
-        iptables -t nat -A POSTROUTING -s 10.0.2.0/24 -o eth2 -j MASQUERADE
-      changed_when: false
+    - name: Ensure iptables-persistent is installed
+      ansible.builtin.apt:
+        name: iptables-persistent
+        state: present
+      environment:
+        DEBIAN_FRONTEND: noninteractive
+    - name: Ensure NAT for ics-net is configured
+      ansible.posix.iptables:
+        table: nat
+        chain: POSTROUTING
+        source: 10.0.2.0/24
+        out_interface: eth2
+        jump: MASQUERADE
+        state: present
+    - name: Persist iptables rules
+      community.general.iptables_state:
+        state: saved
+        path: /etc/iptables/rules.v4
 
 - name: Configure substation RTU
   hosts: substation-rtu
