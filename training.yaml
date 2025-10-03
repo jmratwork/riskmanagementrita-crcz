@@ -47,8 +47,24 @@ levels:
     content: |
       *(Detailed exercise content is provided in **content/exercise1.md**)*
     answer: |
-      Refer to **content/solutions/exercise1_solution.md** for a summary of the findings,
-      prioritised risks, and recommended mitigations from the exercise.
+      **Expected findings**
+      - Inventory of critical banking assets (core banking services, digital channels, SWIFT interfaces, customer databases).
+      - Mapping of dependencies between internal systems and third parties, including cloud services and payment processors.
+      - Threat identification aligned with MITRE ATT&CK for financial environments (targeted phishing, credential abuse, data exfiltration).
+      - Evaluation of existing controls (MFA, fraud monitoring, segregation of duties) and detection of coverage gaps.
+
+      **Identified risks**
+      - Compromise of privileged credentials enabling fraudulent transactions or manipulation of accounting records.
+      - Ransomware affecting payment platforms, disrupting availability and threatening regulatory compliance.
+      - Exfiltration of sensitive customer data resulting in PSD2/GDPR penalties and reputational damage.
+      - Over-reliance on external suppliers without strong business continuity plans.
+
+      **Recommended mitigations**
+      - Deploy privileged access management with continuous monitoring and credential rotation.
+      - Enhance phishing resilience through awareness campaigns, advanced filtering and stronger authentication journeys.
+      - Implement network segmentation and tested immutable backups to limit ransomware impact.
+      - Formalise SLAs and contingency plans with key suppliers and rehearse recovery procedures.
+      - Integrate anomalous behaviour alerts into the SIEM and align incident response playbooks with business stakeholders.
     answer_variable_name: null
   - title: |
       Exercise 2: Risk Assessment and Threat Modelling
@@ -59,8 +75,24 @@ levels:
     content: |
       *(Detailed exercise content is provided in **content/exercise2.md**)*
     answer: |
-      Refer to **content/solutions/exercise2_solution.md** for detailed findings,
-      identified risks, and proposed mitigations for the ICS infrastructure.
+      **Expected findings**
+      - Comprehensive inventory of OT components (SCADA, PLCs, RTUs, field networks) and dependencies with IT services.
+      - Updated ISA/IEC 62443-aligned zones and conduits diagram noting remote access paths.
+      - Threat catalogue referencing MITRE ATT&CK for ICS (remote engineering compromise, process manipulation).
+      - Assessment of current controls such as industrial firewalls, application whitelisting and OT change policies.
+
+      **Identified risks**
+      - Lateral movement from corporate IT into the industrial DMZ that degrades SCADA operations.
+      - Malicious modification of PLC parameters interrupting power generation or distribution.
+      - Denial-of-service on critical communications with insufficient redundancy between control centres.
+      - Shared remote maintenance credentials lacking supervision and audit trails.
+
+      **Recommended mitigations**
+      - Deploy continuous OT network monitoring with anomaly detection for industrial protocols.
+      - Enforce role-based access control and multi-factor authentication for remote engineering sessions.
+      - Strengthen segmentation between IT/OT and critical zones using next-generation firewalls and minimal ACLs.
+      - Institute validated patch and change management workflows with testing prior to production deployment.
+      - Design and exercise OT incident response plans coordinated with operations teams and suppliers.
     answer_variable_name: null
 estimated_duration: 180
 variant_sandboxes: true
