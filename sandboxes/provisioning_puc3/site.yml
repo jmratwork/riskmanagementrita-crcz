@@ -38,7 +38,7 @@
         state: present
     - name: Deploy netcat listener service
       ansible.builtin.template:
-        src: templates/nc-listener@.service.j2
+        src: ../../provisioning/templates/nc-listener@.service.j2
         dest: /etc/systemd/system/nc-listener@.service
         mode: '0644'
     - name: Reload systemd to pick up nc listener unit
