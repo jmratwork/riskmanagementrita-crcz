@@ -71,11 +71,13 @@ Refer to the [RITA guide](content/rita_guide.md) for step-by-step instructions o
 
 To run this training on the CyberRangeCZ Platform:
 
-1. **Install prerequisites** – Ansible 2.12+ is recommended. The provisioning playbooks use the `sysctl` module from the `ansible.posix` collection. Install it before running the playbooks:
+1. **Install prerequisites** – Ansible 2.12+ is recommended. The provisioning playbooks use modules from the `ansible.posix` (`sysctl`) and `community.general` (`iptables_state`) collections. Install them before running the playbooks:
 
    ```bash
-   ansible-galaxy collection install ansible.posix
+   ansible-galaxy collection install ansible.posix community.general
    ```
+
+   If you add playbooks that rely on other external collections, update this list accordingly so all required collections are documented.
 2. **Import the training** – Log in to CyberRangeCZ Platform and navigate to *Training Management → Import*. Upload all files from this repository, including `training.yaml`.
 3. **Select a sandbox variant** – When launching a scenario, choose either:
    - `sandboxes/topology_puc1.yaml` (banking use case), or
