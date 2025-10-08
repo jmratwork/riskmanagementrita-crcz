@@ -3,7 +3,7 @@ Description=Netcat listener on port %i
 After=network.target
 
 [Service]
-ExecStart=/bin/nc -lkp %i
+ExecStart=/bin/nc.openbsd -lkp %i
 Restart=always
 
 [Install]
