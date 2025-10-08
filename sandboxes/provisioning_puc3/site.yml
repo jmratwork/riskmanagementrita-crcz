@@ -34,7 +34,7 @@
     - name: Install netcat for ICS port simulation
       ansible.builtin.apt:
         update_cache: true
-        name: netcat
+        name: netcat-openbsd
         state: present
     - name: Deploy netcat listener service
       ansible.builtin.template:
